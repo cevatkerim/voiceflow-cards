@@ -46,22 +46,24 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto py-8 pb-24">
-        <div className="space-y-6">
-          <InfoCard title="Recent Charging Activity" className="bg-white shadow-lg">
-            <div className="h-[300px] w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chargingData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="date" />
-                  <YAxis yAxisId="left" orientation="left" stroke="#22D3EE" />
-                  <YAxis yAxisId="right" orientation="right" stroke="#94A3B8" />
-                  <Tooltip />
-                  <Bar yAxisId="left" dataKey="energy" fill="#22D3EE" name="Energy (kWh)" />
-                  <Bar yAxisId="right" dataKey="cost" fill="#94A3B8" name="Cost ($)" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </InfoCard>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="md:col-span-2">
+            <InfoCard title="Recent Charging Activity" className="bg-white shadow-lg">
+              <div className="h-[300px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={chargingData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis yAxisId="left" orientation="left" stroke="#22D3EE" />
+                    <YAxis yAxisId="right" orientation="right" stroke="#94A3B8" />
+                    <Tooltip />
+                    <Bar yAxisId="left" dataKey="energy" fill="#22D3EE" name="Energy (kWh)" />
+                    <Bar yAxisId="right" dataKey="cost" fill="#94A3B8" name="Cost ($)" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </InfoCard>
+          </div>
 
           <InfoCard title="Charging Sessions Details" className="bg-white shadow-lg">
             <div className="space-y-4">
